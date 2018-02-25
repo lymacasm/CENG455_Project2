@@ -366,6 +366,7 @@ extern bool _get_line(char* string)
 	 _msg_free(msg_ptr);
 
 	_msgq_close(user_qid);
+	_msgq_close(read_qid);
 	if(_task_get_error() != MQX_OK){
 		printf("Failed to close User queue.\n");
 		printf("Error code: %x\n", _task_get_error());
